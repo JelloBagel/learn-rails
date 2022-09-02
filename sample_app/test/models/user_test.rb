@@ -12,7 +12,6 @@ class UserTest < ActiveSupport::TestCase
     puts "Error #{@user.errors.full_messages}" if @user.errors.any?
   end
 
-
   test "name should be present" do
     @user.name = "     "
     assert_not @user.valid?
@@ -22,7 +21,7 @@ class UserTest < ActiveSupport::TestCase
     @user.name = "a" * 51
     assert_not @user.valid?
   end
-
+  
   test "email should be present" do
     @user.email = "     "
     assert_not @user.valid?
